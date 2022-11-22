@@ -5,7 +5,7 @@ import yfinance as yf
 import pandas as pd 
 
 
-st.title('빤또쳬 쭈씪 뗴이떠 모음')
+st.title('반도체 관련 종목모음'
 
 # tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
 
@@ -17,7 +17,7 @@ reversed_ticker = dict(map(reversed,tickers.items()))
 
 dropdown = st.multiselect('select',tickers.keys())
 
-start = st.date_input('Start', value=pd.to_datetime('2019-01-01'))
+start = st.date_input('Start', value=pd.to_datetime('2015-01-01'))
 
 end = st.date_input('End',value=pd.to_datetime('today'))
 
