@@ -5,7 +5,7 @@ import yfinance as yf
 import pandas as pd 
 
 
-st.title('반도체 주식 데이터 Dashboard')
+st.title('빤또쳬 쭈씪 뗴이떠 모음')
 
 # tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
 
