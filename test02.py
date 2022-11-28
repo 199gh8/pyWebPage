@@ -42,7 +42,6 @@ def main():
 
     data = dict(data)
 
-    font = 'C:\Windows\Fonts\HMFMPYUN.ttf' #이 친구는 코랩과는 다르다 ㅋㅋㅋㅋ
     wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
