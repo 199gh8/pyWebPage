@@ -42,7 +42,7 @@ def main():
 
     data = dict(data)
 
-    font = font = '199gh8/pyWebPage/NanumGothic.otf'
+    font = font = 'pyWebPage/NanumGothic.otf'
     wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
