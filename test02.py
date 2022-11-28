@@ -42,7 +42,7 @@ def main():
 
     data = dict(data)
 
-    font ='/.fonts/NanumGothic.ttf
+    font ='\.fonts\NanumGothic.ttf'
     wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
