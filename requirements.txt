@@ -8,3 +8,11 @@ konlpy
 wordcloud
 nltk
 streamlit
+requests
+bs4 
+matplotlib
+konlpy
+konlpy.tag
+wordcloud
+nltk
+streamlit
