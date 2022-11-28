@@ -3,3 +3,8 @@ yfinance
 pandas
 nltk
 requests
+bs4
+konlpy
+wordcloud
+nltk
+streamlit
