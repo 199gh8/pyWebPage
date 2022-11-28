@@ -9,5 +9,4 @@ wordcloud
 nltk
 streamlit
 requests
-konlpy.tag
 streamlit
