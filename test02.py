@@ -43,7 +43,7 @@ def main():
     data = dict(data)
 
     wc = WordCloud(
-            font="Nanum'"\
+            font=""\
             background_color="white", \
             width=1000, \
             height=1000, \
