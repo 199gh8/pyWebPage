@@ -42,8 +42,8 @@ def main():
 
     data = dict(data)
 
- 
-    wc = WordCloud(font_path=,\
+    font = font = 'https://github.com/199gh8/pyWebPage/blob/10e52f68fdbc318c36ddfdfa4611dc61248207a8/NanumGothic.otf'
+    wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
             height=1000, \
