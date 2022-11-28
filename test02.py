@@ -42,8 +42,8 @@ def main():
 
     data = dict(data)
 
-    wc = WordCloud(
-            font=""\
+ 
+    wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
             height=1000, \
