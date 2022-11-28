@@ -10,3 +10,4 @@ nltk
 streamlit
 requests
 streamlit
+default-jre
