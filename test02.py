@@ -42,7 +42,7 @@ def main():
 
     data = dict(data)
 
-    wc = WordCloud(font_path=font,\
+    wc = WordCloud(
             background_color="white", \
             width=1000, \
             height=1000, \
