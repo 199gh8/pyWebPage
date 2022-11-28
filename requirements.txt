@@ -1,1 +1,7 @@
 h2o
+bs4
+matplotlib
+konlpy
+wordcloud
+nltk
+streamlit
