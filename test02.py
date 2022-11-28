@@ -43,7 +43,7 @@ def main():
     data = dict(data)
 
     wc = WordCloud(
-            background_color="white", \
+            background_color="blac", \
             width=1000, \
             height=1000, \
             max_words=100, \
