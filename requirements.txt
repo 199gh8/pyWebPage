@@ -6,3 +6,4 @@ wordcloud
 nltk
 streamlit
 plotly
+yfinance
