@@ -25,6 +25,8 @@ from matplotlib import ticker   #그래프 축 눈금 간격 설정
 # 코드명으로 종목 추가 해주어야함
 # -----------------------------------------------------------------------------
 
+bt_icon = "https://www.citypng.com/public/uploads/preview/-51614811467slofjndnl0.png"
+
 #sidebar표시
 st.subheader('주식,가상화폐 변동율') 
 # 종믁은 시장 코드로 입력해주어야함.
@@ -33,7 +35,7 @@ tickers ={
   'Samsung Electronics':'005930.KS',
   'SK hynix':'000660.KS',
   'TESLA' :'TSLA',
-  'BTC-USD':'BTC-USD'
+  'BTC-USD' + bt_icon:'BTC-USD'
 }
 
 #종목받아옴
@@ -56,12 +58,6 @@ if len(dd) > 0:
     st.line_chart(df)
     
 
-
- 
- 
- 
- 
- 
  
 # -----------------------------------------------------------------------------
 # 환율데이터 가져오는 용도.
