@@ -7,7 +7,15 @@ import time
 import matplotlib.pyplot as plt
 import matplotlib
 from io import BytesIO
+import matplotlib.pyplot as plt
+import matplotlib
+import plotly.express as px
 
+rc('font', family='AppleGothic')
+plt.rcParams['axes.unicode_minus'] = False
+matplotlib.rcParams["font.family"] ="Malgun Gothic"
+matplotlib.rcParams["axes.unicode_minus"] =False
+    
 # -----------------------------------------------------------------------------
 # 날짜별 환율 데이터를 반환하는 함수
 # - 입력 인수: currency_code(통화코드), last_page_num(페이지 수)
@@ -96,19 +104,3 @@ if(clicked==True):
     fig = ax.get_figure()               # fig 객체 가져오기    
     st.pyplot(fig)                      # 스트림릿 웹 앱에 그래프 그리기
     
-    # 3) 파일 다운로드    
-    st.markdown("**환율 데이터 파일 다운로드**")
-    # DataFrame 데이터를 CSV 데이터로 변환
-    csv_data = df_exchange_rate.to_csv()
-
-    # DataFrame 데이터를 엑셀 데이터로 변환
-    excel_data = BytesIO()   # 엑셀 데이터의 메모리 버퍼(저장소) 생성
-    df_exchange_rate.to_excel(excel_data) # 엑셀 형식으로 버퍼에 쓰기
-
-    columns = st.columns(2) # 2개의 세로단으로 구성
-    with columns[0]:        
-        st.download_button("CSV 파일 다운로드", csv_data, 
-                           file_name='exchange_rate_data.csv')
-    with columns[1]:
-        st.download_button("엑셀 파일 다운로드", excel_data, 
-                           file_name='exchange_rate_data.xlsx')
