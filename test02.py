@@ -10,13 +10,13 @@ import streamlit as st
 import matplotlib
 import plotly.express as px
 
- wc = WordCloud(
-            background_color="black", \
-            width=1000, \
-            height=1000, \
-            max_words=100, \
-            max_font_size=300)
-    wc = wc.generate_from_frequencies(data)
+wc = WordCloud(
+  background_color="black", \
+  width=1000, \
+  height=1000, \
+  max_words=100, \
+  max_font_size=300)
+wc = wc.generate_from_frequencies(data)
     
 
 plt.rcParams['axes.unicode_minus'] = False
