@@ -119,9 +119,7 @@ tickers ={
   'Samsung Electronics':'005930.KS',
   'NVIDIA Corporation' :'NVDA',
   'TESLA':'TSLA'
-  'MICROSOFT':'MSFT'
-  'BITCOIN':'BTC-USD'
-  'Ethereum':'ETH-USD'
+ 
 }
 reversed_ticker = dict(map(reversed,tickers.items()))
 dropdown = st.multiselect('select',tickers.keys())
