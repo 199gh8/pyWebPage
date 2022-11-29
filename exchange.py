@@ -25,9 +25,12 @@ from matplotlib import ticker   #그래프 축 눈금 간격 설정
 # 코드명으로 종목 추가 해주어야함
 # -----------------------------------------------------------------------------
 
+#메인 이미지 
 st.image ("https://png.pngtree.com/thumb_back/fw800/background/20210907/pngtree-stock-investment-financial-management-hd-background-image_807153.jpg")
+
 #sidebar표시
 st.subheader('주식,가상화폐 변동율') 
+
 # 종믁은 시장 코드로 입력해주어야함.
 # 추가는 간단하게 '이름명':'코드'
 tickers ={
@@ -39,21 +42,27 @@ tickers ={
 
 #종목받아옴
 rt = dict(map(reversed,tickers.items()))
+
 #종목 여러개선택
 dd = st.multiselect('select',tickers.keys())
+
 #시작기간설정
 start = st.date_input('Start', value=pd.to_datetime('2022-11-01'))
+
 #종료기간설정
 end = st.date_input('End',value=pd.to_datetime('today'))
 
 #데이터 프레임
 if len(dd) > 0:
   for i in dd:
+   
     #종목닫기
     df = yf.download(tickers[i],start,end)['Adj Close']
-    #종목명
+   
+   #종목명
     st.title(rt[tickers[i]])
-    #종목차트
+   
+   #종목차트
     st.line_chart(df)
     
 
@@ -86,7 +95,8 @@ def get_exchange_rate_data(currency_code, last_page_num):
         
     return df
 # -----------------------------------------------------------------------------
-  
+
+#환율 헤더
 st.subheader("환율정보")
 
 #사이드바 표시용.
@@ -111,43 +121,42 @@ clicked = st.sidebar.button("환율 데이터 가져오기")
 
 #클릭시 데이터 가져오도록 만드는 함수.
 if(clicked==True):
-
-    currency_symbol = currency_name_symbols[currency_name] # 환율 심볼 선택
+ 
+    # 환율 심볼 선택
+    currency_symbol = currency_name_symbols[currency_name] 
     currency_code = f"FX_{currency_symbol}KRW"
-
-    last_page_num = 20 # 네이버 금융에서 가져올 최대 페이지 번호 지정 
     
-    # 지정한 환율 코드를 이용해 환율 데이터 가져오기
+    # 네이버 금융에서 가져올 최대 페이지 지정
+    last_page_num = 20  
+    
+    # 환율 데이터 가져오기
     df_exchange_rate = get_exchange_rate_data(currency_code, last_page_num)
     
-    # 원하는 열만 선택
+    # 필요한 열 크롤링
     df_exchange_rate = df_exchange_rate[['날짜', '매매기준율','사실 때',
                                          '파실 때', '보내실 때', '받으실 때']]
     
-    # 최신 데이터와 과거 데이터의 순서를 바꿔 df_exchange_rate2에 할당
+    # 최신 데이터를 과거데이터와 전환후  df_exchange_rate2 에 할당
     df_exchange_rate2 = df_exchange_rate[::-1].reset_index(drop=True)
 
-    # df_exchange_rate2의 index를 날짜 열의 데이터로 변경
+    # index를 날짜 열 데이터로 변경
     df_exchange_rate2 = df_exchange_rate2.set_index('날짜') 
 
-    # df_exchange_rate2의 index를 datetime 형식으로 변환
+    # datetime 형식으로 변환
     df_exchange_rate2.index = pd.to_datetime(df_exchange_rate2.index, 
                                              format='%Y-%m-%d') 
 
     # 1) 환율 데이터 표시
     st.subheader(f"[{currency_name}] 환율 데이터")
-    st.dataframe(df_exchange_rate.head())  # 환율 데이터 표시(앞의 일부만 표시)
+    st.dataframe(df_exchange_rate.head())  
     
     # 1.1) 환율 변동폭 표시
     st.subheader(f"환율 변동폭")
     
-    # 2) 차트 그리기
-    # matplotlib을 이용한 그래프에 한글을 표시하기 위한 설정
+    # 2) 그래프 설정.
     matplotlib.rcParams['font.family'] = 'Malgun Gothic'
-    matplotlib.rcParams['axes.unicode_minus'] = False
-    
-   
- # 선 그래프 그리기 (df_exchange_rate2 이용)
+    matplotlib.rcParams['axes.unicode_minus'] = False    
+
     ax = df_exchange_rate2['매매기준율'].plot(grid=True, figsize=(15, 5))
     plt.xticks(fontsize=15)             # X축 눈금값의 폰트 크기 지정
     plt.yticks(fontsize=15)             # Y축 눈금값의 폰트 크기 지정    
