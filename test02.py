@@ -10,7 +10,9 @@ import streamlit as st
 import matplotlib
 import plotly.express as px
 
+rc('font', family='AppleGothic')
 plt.rcParams['axes.unicode_minus'] = False
+matplotlib.rcParams["font.family"] ="Malgun Gothic"
 matplotlib.rcParams["axes.unicode_minus"] =False
 
 rc('font', family='AppleGothic')
@@ -53,13 +55,14 @@ def main():
 
     data = dict(data)
  
-  wc = WordCloud(font=AppleGothic,\
-    background_color="black", \
-    width=1000, \
-    height=1000, \
-    max_words=100, \
-    max_font_size=300)
-wc = wc.generate_from_frequencies(data)
+   
+    wc = WordCloud(font_path=font,\
+            background_color="white", \
+            width=1000, \
+            height=1000, \
+            max_words=100, \
+            max_font_size=300)
+    wc = wc.generate_from_frequencies(data)
     
 
 
