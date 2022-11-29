@@ -92,13 +92,15 @@ if(clicked==True):
     #matplotlib.rcParams["font.family"] ="Malgun Gothic"
     #matplotlib.rcParams["axes.unicode_minus"] =False
     
+   
     # 선 그래프 그리기 (df_exchange_rate2 이용)
-    ax = df_exchange_rate2['trading standard'].plot(grid=True, figsize=(15, 5))
-    ax.set_title("exchange(trading standard)", fontsize=30) # 그래프 제목을 지정
-    ax.set_xlabel("DATE", fontsize=20)                   # x축 라벨을 지정
-    ax.set_ylabel(f"/{currency_name}", fontsize=20)  # y축 라벨을 지정
+    ax = df_exchange_rate2['매매기준율'].plot(grid=True, figsize=(15, 5))
+    ax.set_title("환율(매매기준율) 그래프", fontsize=30) # 그래프 제목을 지정
+    ax.set_xlabel("기간", fontsize=20)                   # x축 라벨을 지정
+    ax.set_ylabel(f"원화/{currency_name}", fontsize=20)  # y축 라벨을 지정
     plt.xticks(fontsize=15)             # X축 눈금값의 폰트 크기 지정
     plt.yticks(fontsize=15)             # Y축 눈금값의 폰트 크기 지정    
     fig = ax.get_figure()               # fig 객체 가져오기    
     st.pyplot(fig)                      # 스트림릿 웹 앱에 그래프 그리기
+    
     
