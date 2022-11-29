@@ -7,6 +7,21 @@ from wordcloud import WordCloud
 import nltk
 import streamlit as st
 
+import matplotlib
+import plotly.express as px
+
+ wc = WordCloud(
+            background_color="black", \
+            width=1000, \
+            height=1000, \
+            max_words=100, \
+            max_font_size=300)
+    wc = wc.generate_from_frequencies(data)
+    
+
+plt.rcParams['axes.unicode_minus'] = False
+matplotlib.rcParams["axes.unicode_minus"] =False
+    
 def main():
     st.header('최대 7일 이내의 뉴스 키워드를 찾을 수 있습니다')
     date = st.text_input('키워드를 보고싶은 일자를 입력해주세요. ex)20210324')
@@ -42,13 +57,7 @@ def main():
 
     data = dict(data)
 
-    wc = WordCloud(
-            background_color="black", \
-            width=1000, \
-            height=1000, \
-            max_words=100, \
-            max_font_size=300)
-    wc = wc.generate_from_frequencies(data)
+   
 
 
 
