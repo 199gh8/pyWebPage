@@ -111,6 +111,12 @@ if(clicked==True):
     
     
 # ----------------------------------주식파트------------------------------------------
+currency_name_symbols = {"1", "2", 
+                         "3", "4"}
+currency_name = st.sidebar.selectbox('종목 선택', currency_name_symbols.keys())
+
+clicked = st.sidebar.button("환율 데이터 가져오기")
+
 
 st.title('주식,가상화폐 변동율')
 # tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
