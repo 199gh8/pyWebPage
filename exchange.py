@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# 주식, 가상화폐 기록 확인 후 바로 환율 까지 볼수있는 페이지
 # 여러가지 방법의 데이터 시각화 표현해볼려고 시도함.
 # -----------------------------------------------------------------------------
 
@@ -63,7 +64,7 @@ if len(dd) > 0:
  
  
 # -----------------------------------------------------------------------------
-# 날짜별 환율 데이터를 반환하는 함수
+# 환율데이터 가져오는 용도.
 # -----------------------------------------------------------------------------
 
 #통화 데이터 가져옴 최종 페이지 까지.
@@ -85,30 +86,35 @@ def get_exchange_rate_data(currency_code, last_page_num):
                 print(f"{page_num}is last page.")    
             break
             
-        # page별로 가져온 DataFrame 데이터 연결
+        # 페이지별 dataframe 연결용.
         df = pd.concat([df, dfs[0]], ignore_index=True) 
         
     return df
 # -----------------------------------------------------------------------------
   
-st.subheader("환율 정보를 가져오는 웹 앱")
+st.subheader("환율정보")
 
-# 사이드바의 폭을 조절. {width:250px;} 으로 지정하면 폭을 250픽셀로 지정
+#사이드바 표시용.
 st.markdown(
     """
     <style>
+    #사이드바 넓이 지정
     [data-testid="stSidebar"][aria-expanded="true"] > div:first-child{width:250px;}
     </style>
     """, unsafe_allow_html=True
 )
 
-
+#환율 카테고리 지정
 currency_name_symbols = {"미국 달러":"USD", "유럽연합 유로":"EUR", 
                          "일본 엔(100)":"JPY", "중국 위안":"CNY"}
+
+#통화 선택 유도용 표시
 currency_name = st.sidebar.selectbox('통화 선택', currency_name_symbols.keys())
 
+#클릭시, 데이터 가져오는 버튼
 clicked = st.sidebar.button("환율 데이터 가져오기")
 
+#클릭시 데이터 가져오도록 만드는 함수.
 if(clicked==True):
 
     currency_symbol = currency_name_symbols[currency_name] # 환율 심볼 선택
