@@ -7,12 +7,12 @@ from konlpy.tag import Okt
 from wordcloud import WordCloud
 import nltk
 
-import matplotlib as mat
-#설치된 폰트 출력
-import matplotlib.font_manager as fonm
-font_list = [font.name for font in fonm.fontManager.ttflist]
+# 폰트 설정 방법 1
+import matplotlib.pyplot as plt
 
-mat.rcParams['font.family'] = "Segoe UI"
+# matplotlib 폰트설정
+plt.rc('font', family='NanumGothic') # For Windows
+print(plt.rcParams['font.family'])
     
 def main():
     st.header('최대 7일 이내의 뉴스 키워드를 찾을 수 있습니다')
