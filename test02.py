@@ -43,8 +43,8 @@ def main():
     data = dict(data)
  
     
- 
-    wc = WordCloud(font = "sans serif", \
+    font = "sans serif"
+    wc = WordCloud(fontpath = font, \
             background_color="white", \
             width=1000, \
             height=1000, \
