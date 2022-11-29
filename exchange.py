@@ -15,7 +15,37 @@ import yfinance as yf
 from tracemalloc import start
 from matplotlib import ticker
 
-    
+ 
+# ----------------------------------주식파트------------------------------------------
+
+
+
+st.title('주식,가상화폐 변동율')
+# tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
+tickers ={
+  'SK hynix':'000660.KS',
+  'Samsung Electronics':'005930.KS',
+  'TESLA' :'TSLA',
+  'BTC-USD':'BTC-USD'
+
+}
+reversed_ticker = dict(map(reversed,tickers.items()))
+dropdown = st.multiselect('select',tickers.keys())
+start = st.date_input('Start', value=pd.to_datetime('2019-01-01'))
+end = st.date_input('End',value=pd.to_datetime('today'))
+if len(dropdown) > 0:
+  for i in dropdown:
+    df = yf.download(tickers[i],start,end)['Adj Close']
+    st.title(reversed_ticker[tickers[i]])
+    st.line_chart(df)
+
+
+ 
+ 
+ 
+ 
+ 
+ 
 # -----------------------------------------------------------------------------
 # 날짜별 환율 데이터를 반환하는 함수
 # - 입력 인수: currency_code(통화코드), last_page_num(페이지 수)
@@ -110,25 +140,3 @@ if(clicked==True):
     
     
     
-# ----------------------------------주식파트------------------------------------------
-
-
-
-st.title('주식,가상화폐 변동율')
-# tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
-tickers ={
-  'SK hynix':'000660.KS',
-  'Samsung Electronics':'005930.KS',
-  'TESLA' :'TSLA',
-  'BTC-USD':'BTC-USD'
-
-}
-reversed_ticker = dict(map(reversed,tickers.items()))
-dropdown = st.multiselect('select',tickers.keys())
-start = st.date_input('Start', value=pd.to_datetime('2019-01-01'))
-end = st.date_input('End',value=pd.to_datetime('today'))
-if len(dropdown) > 0:
-  for i in dropdown:
-    df = yf.download(tickers[i],start,end)['Adj Close']
-    st.title(reversed_ticker[tickers[i]])
-    st.line_chart(df)
