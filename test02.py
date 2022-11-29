@@ -7,13 +7,6 @@ from konlpy.tag import Okt
 from wordcloud import WordCloud
 import nltk
 
-# 폰트 설정 방법 1
-import matplotlib.pyplot as plt
-
-# matplotlib 폰트설정
-plt.rc('font', family='NanumGothic') # For Windows
-print(plt.rcParams['font.family'])
-    
 def main():
     st.header('최대 7일 이내의 뉴스 키워드를 찾을 수 있습니다')
     date = st.text_input('키워드를 보고싶은 일자를 입력해주세요. ex)20210324')
@@ -51,7 +44,7 @@ def main():
  
     
 
-font = 'C:\WINDOWS\FONTS\GULIM.TTC' #이 친구는 코랩과는 다르다 ㅋㅋㅋㅋ
+    font = 'C:\WINDOWS\FONTS\GULIM.TTC' #이 친구는 코랩과는 다르다 ㅋㅋㅋㅋ
     wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
