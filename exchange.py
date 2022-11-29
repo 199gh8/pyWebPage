@@ -117,7 +117,7 @@ st.title('주식,가상화폐 변동율')
 tickers ={
   'SK hynix':'000660.KS',
   'Samsung Electronics':'005930.KS',
-  'NVIDIA Corporation' :'NVDA',
+  'TESLA' :'TSLA',
   'BTC-USD':'BTC-USD'
 
 }
