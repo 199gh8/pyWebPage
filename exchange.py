@@ -87,6 +87,9 @@ if(clicked==True):
     st.subheader(f"[{currency_name}] 환율 데이터")
     st.dataframe(df_exchange_rate.head())  # 환율 데이터 표시(앞의 일부만 표시)
     
+    # 1.1) 환율 변동폭 표시
+    st.subheader(f"환율 변동폭")
+    
     # 2) 차트 그리기
     # matplotlib을 이용한 그래프에 한글을 표시하기 위한 설정
     #matplotlib.rcParams["font.family"] ="Malgun Gothic"
