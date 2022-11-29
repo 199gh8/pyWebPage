@@ -112,7 +112,7 @@ if(clicked==True):
     
 
 
-st.title('반도체 주식 데이터 Dashboard')
+st.title('주요 주식 변동율')
 # tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
 tickers ={
   'SK hynix':'000660.KS',
