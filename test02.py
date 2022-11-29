@@ -1,3 +1,4 @@
+import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 import matplotlib.pyplot as plt
@@ -5,16 +6,6 @@ from konlpy.tag import Kkma
 from konlpy.tag import Okt
 from wordcloud import WordCloud
 import nltk
-import streamlit as st
-
-import matplotlib
-import plotly.express as px
-from matplotlib import rc
-
-rc('font', family='AppleGothic')
-plt.rcParams['axes.unicode_minus'] = False
-matplotlib.rcParams["font.family"] ="Malgun Gothic"
-matplotlib.rcParams["axes.unicode_minus"] =False
     
 def main():
     st.header('최대 7일 이내의 뉴스 키워드를 찾을 수 있습니다')
@@ -51,8 +42,9 @@ def main():
 
     data = dict(data)
  
-   
-    wc = WordCloud(
+    
+    font = rc 
+    wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
             height=1000, \
@@ -68,9 +60,6 @@ def main():
     plt.axis('off')
     plt.show()
     st.pyplot(fig)
-
-
-
 
 
 if __name__ == '__main__':
