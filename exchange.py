@@ -10,11 +10,8 @@ import time                     #그래프 사용용도
 import matplotlib.pyplot as plt #그래프 표현을위해 사용
 import matplotlib               #그래프 표현을위해 사용
 from io import BytesIO          #IO 모듈의 바이트 IO 작업
-import matplotlib.pyplot as plt #그래프 표현을위해 사용
-import matplotlib               #그래프 표현을위해 사용
 import plotly.express as px     #그래프 표현을위해 사용
 import yfinance as yf           #주가 불러오기위해 사용
-
 from tracemalloc import start   #파이썬이 할당한 메모리 블록을 추적
 from matplotlib import ticker   #그래프 축 눈금 간격 설정
 
