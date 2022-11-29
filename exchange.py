@@ -116,7 +116,7 @@ st.title('주요 해외주식,가상화폐 변동율')
 # tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
 tickers ={
   'TESLA':'TSLA'
-  'APPLE':'AAPL'
+  'MICROSOFT':'MSFT'
   'BITCOIN':'BTC-USD'
   'Ethereum':'ETH-USD'
 }
