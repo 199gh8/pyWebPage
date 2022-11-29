@@ -112,7 +112,7 @@ if(clicked==True):
     
 
 
-st.title('주요 주식,가상화폐 변동율')
+st.title('주식,가상화폐 변동율')
 # tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
 tickers ={
   'SK hynix':'000660.KS',
