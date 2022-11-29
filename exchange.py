@@ -73,7 +73,7 @@ def get_exchange_rate_data(currency_code, last_page_num):
     return df
 # -----------------------------------------------------------------------------
   
-st.title("환율 정보를 가져오는 웹 앱")
+st.subheader("환율 정보를 가져오는 웹 앱")
 
 # 사이드바의 폭을 조절. {width:250px;} 으로 지정하면 폭을 250픽셀로 지정
 st.markdown(
