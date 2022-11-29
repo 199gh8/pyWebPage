@@ -118,7 +118,7 @@ tickers ={
   'SK hynix':'000660.KS',
   'Samsung Electronics':'005930.KS',
   'BTC-USD':'BTC-USD'
-  'AAPL':'AAPL'
+  'MSFT':'MSFT'
 }
 reversed_ticker = dict(map(reversed,tickers.items()))
 dropdown = st.multiselect('select',tickers.keys())
