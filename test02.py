@@ -45,7 +45,7 @@ def main():
     
  
     wc = WordCloud(
-            font = "sans serif" 
+            font = "sans serif", \
             background_color="white", \
             width=1000, \
             height=1000, \
