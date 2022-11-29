@@ -18,7 +18,7 @@ from matplotlib import ticker   #그래프 축 눈금 간격 설정
 
 
 
-st.title('주식,가상화폐 변동율') #sidebar표시
+st.subtitle('주식,가상화폐 변동율') #sidebar표시
 # 종믁은 시장 코드로 입력해주어야함.
 # 추가는 간단하게 '이름명':'코드'
 tickers ={
@@ -26,9 +26,9 @@ tickers ={
   'SK hynix':'000660.KS',
   'TESLA' :'TSLA',
   'BTC-USD':'BTC-USD'
-
 }
-reversed_ticker = dict(map(reversed,tickers.items()))
+
+A = dict(map(reversed,tickers.items()))
 dropdown = st.multiselect('select',tickers.keys())
 start = st.date_input('Start', value=pd.to_datetime('2019-01-01'))
 end = st.date_input('End',value=pd.to_datetime('today'))
