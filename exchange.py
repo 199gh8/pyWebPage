@@ -18,7 +18,7 @@ from matplotlib import ticker   #그래프 축 눈금 간격 설정
 
 
 
-st.subtitle('주식,가상화폐 변동율') #sidebar표시
+st.subheader('주식,가상화폐 변동율') #sidebar표시
 # 종믁은 시장 코드로 입력해주어야함.
 # 추가는 간단하게 '이름명':'코드'
 tickers ={
