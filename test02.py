@@ -43,8 +43,8 @@ def main():
     data = dict(data)
  
     
-    font = "pyWebPage/.fonts/NanumGothic.ttf"
-    wc = WordCloud(font_path=font,\
+ 
+    wc = WordCloud(
             background_color="white", \
             width=1000, \
             height=1000, \
