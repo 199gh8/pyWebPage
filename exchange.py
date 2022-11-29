@@ -89,8 +89,10 @@ if(clicked==True):
     
     # 2) 차트 그리기
     # matplotlib을 이용한 그래프에 한글을 표시하기 위한 설정
-    matplotlib.rcParams['font.family'] = 'Malgun Gothic'
-    matplotlib.rcParams['axes.unicode_minus'] = False
+    rc('font', family='AppleGothic')
+    plt.rcParams['axes.unicode_minus'] = False
+    matplotlib.rcParams["font.family"] ="Malgun Gothic"
+    matplotlib.rcParams["axes.unicode_minus"] =False
     
     # 선 그래프 그리기 (df_exchange_rate2 이용)
     ax = df_exchange_rate2['매매기준율'].plot(grid=True, figsize=(15, 5))
