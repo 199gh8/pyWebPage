@@ -43,7 +43,7 @@ def main():
     data = dict(data)
    
 
-    font = "C:\\WINDOWS\\FONTS\GULIM.TTC" #이 친구는 코랩과는 다르다 ㅋㅋㅋㅋ
+    font = " '/usr/share/fonts/truetype/nanum/NanumMyeongjoBold.ttf'" #이 친구는 코랩과는 다르다 ㅋㅋㅋㅋ
     wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
