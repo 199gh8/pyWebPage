@@ -84,7 +84,6 @@ def get_exchange_rate_data(currency_code, last_page_num):
             
         # page별로 가져온 DataFrame 데이터 연결
         df = pd.concat([df, dfs[0]], ignore_index=True) 
-        time.sleep(0.1) # 0.1초간 멈춤        
         
     return df
 # -----------------------------------------------------------------------------
