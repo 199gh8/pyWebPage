@@ -11,10 +11,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import plotly.express as px
 
-rc('font', family='AppleGothic')
-plt.rcParams['axes.unicode_minus'] = False
-matplotlib.rcParams["font.family"] ="Malgun Gothic"
-matplotlib.rcParams["axes.unicode_minus"] =False
+
     
 # -----------------------------------------------------------------------------
 # 날짜별 환율 데이터를 반환하는 함수
@@ -54,6 +51,11 @@ st.markdown(
     </style>
     """, unsafe_allow_html=True
 )
+
+rc('font', family='AppleGothic')
+plt.rcParams['axes.unicode_minus'] = False
+matplotlib.rcParams["font.family"] ="Malgun Gothic"
+matplotlib.rcParams["axes.unicode_minus"] =False
 
 currency_name_symbols = {"미국 달러":"USD", "유럽연합 유로":"EUR", 
                          "일본 엔(100)":"JPY", "중국 위안":"CNY"}
