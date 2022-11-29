@@ -9,6 +9,7 @@ import streamlit as st
 
 import matplotlib
 import plotly.express as px
+from matplotlib import rc
 
 rc('font', family='AppleGothic')
 plt.rcParams['axes.unicode_minus'] = False
