@@ -112,14 +112,12 @@ if(clicked==True):
     
 
 
-st.title('주요 주식 변동율')
+st.title('주요 주식,가상화폐 변동율')
 # tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
 tickers ={
-  'SK hynix':'000660.KS',
   'Samsung Electronics':'005930.KS',
-  'NVIDIA Corporation' :'NVDA',
   'TESLA':'TSLA'
-  'MICROSOFT':'MSFT'
+  'APPLE':'AAPL'
   'BITCOIN':'BTC-USD'
   'Ethereum':'ETH-USD'
 }
