@@ -66,20 +66,23 @@ if len(dd) > 0:
 # 날짜별 환율 데이터를 반환하는 함수
 # -----------------------------------------------------------------------------
 
+#통화 데이터 가져옴 최종 페이지 까지.
 def get_exchange_rate_data(currency_code, last_page_num):
+    #위의 코드와 다르게 네이버증권것을 가져옴.
     base_url = "https://finance.naver.com/marketindex/exchangeDailyQuote.nhn"
     df = pd.DataFrame()
     
+    #최종 페이지까지  가져옴
     for page_num in range(1, last_page_num+1):
         url = f"{base_url}?marketindexCd={currency_code}&page={page_num}"
         dfs = pd.read_html(url, header=1)
         
-        # 통화 코드가 잘못 지정됐거나 마지막 페이지의 경우 for 문을 빠져나옴
+        # 코드지정 오류 or 마지막일시 페이지 빠져나옴.
         if dfs[0].empty: 
             if (page_num==1):
-                print(f"통화 코드({currency_code})가 잘못 지정됐습니다.")    
+                print(f"({currency_code})error.")    
             else:
-                print(f"{page_num}가 마지막 페이지입니다.")    
+                print(f"{page_num}is last page.")    
             break
             
         # page별로 가져온 DataFrame 데이터 연결
