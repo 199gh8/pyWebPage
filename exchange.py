@@ -1,30 +1,29 @@
-# 환율 데이터를 가져오는 웹 앱
+import streamlit as st          #streamlit용
+import pandas as pd             #그래프 사용용도
+import datetime                 #그래프 사용용도
+import time                     #그래프 사용용도
+import matplotlib.pyplot as plt #그래프 표현을위해 사용
+import matplotlib               #그래프 표현을위해 사용
+from io import BytesIO          #IO 모듈의 바이트 IO 작업
+import matplotlib.pyplot as plt #그래프 표현을위해 사용
+import matplotlib               #그래프 표현을위해 사용
+import plotly.express as px     #그래프 표현을위해 사용
+import yfinance as yf           #주가 불러오기위해 사용
 
-import streamlit as st
-import pandas as pd
-import datetime
-import time
-import matplotlib.pyplot as plt
-import matplotlib
-from io import BytesIO
-import matplotlib.pyplot as plt
-import matplotlib
-import plotly.express as px
-import yfinance as yf
-
-from tracemalloc import start
-from matplotlib import ticker
+from tracemalloc import start   #파이썬이 할당한 메모리 블록을 추적
+from matplotlib import ticker   #그래프 축 눈금 간격 설정
 
  
 # ----------------------------------주식파트------------------------------------------
 
 
 
-st.title('주식,가상화폐 변동율')
-# tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
+st.title('주식,가상화폐 변동율') #sidebar표시
+# 종믁은 시장 코드로 입력해주어야함.
+# 추가는 간단하게 '이름명':'코드'
 tickers ={
-  'SK hynix':'000660.KS',
   'Samsung Electronics':'005930.KS',
+  'SK hynix':'000660.KS',
   'TESLA' :'TSLA',
   'BTC-USD':'BTC-USD'
 
