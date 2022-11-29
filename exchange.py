@@ -112,10 +112,9 @@ if(clicked==True):
     
 
 
-st.title('주요 주식,가상화폐 변동율')
+st.title('주요 해외주식,가상화폐 변동율')
 # tickers =('TSLA','AAPL','MSFT','BTC-USD','ETH-USD','005930.KS')
 tickers ={
-  'Samsung Electronics':'005930.KS',
   'TESLA':'TSLA'
   'APPLE':'AAPL'
   'BITCOIN':'BTC-USD'
