@@ -25,7 +25,8 @@ from matplotlib import ticker   #그래프 축 눈금 간격 설정
 # 코드명으로 종목 추가 해주어야함
 # -----------------------------------------------------------------------------
 
-bt_icon = "https://www.citypng.com/public/uploads/preview/-51614811467slofjndnl0.png"
+bt_icon = st.image("https://www.citypng.com/public/uploads/preview/-51614811467slofjndnl0.png")
+
 
 #sidebar표시
 st.subheader('주식,가상화폐 변동율') 
