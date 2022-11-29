@@ -118,7 +118,6 @@ tickers ={
   'SK hynix':'000660.KS',
   'Samsung Electronics':'005930.KS',
   'NVIDIA Corporation' :'NVDA',
-  'QUALCOMM':'QCOM'
   'BTC-USD':'BTC-USD'
 }
 reversed_ticker = dict(map(reversed,tickers.items()))
