@@ -113,7 +113,7 @@ if(clicked==True):
 # ----------------------------------주식파트------------------------------------------
 currency_name_symbols2 = {"1", "2", 
                          "3", "4"}
-currency_name2 = st.sidebar.selectbox('종목 선택', currency_name_symbols.keys())
+currency_name2 = st.sidebar.selectbox('종목 선택', currency_name_symbols2.keys())
 
 clicked2 = st.sidebar.button("종목 데이터 가져오기")
 
