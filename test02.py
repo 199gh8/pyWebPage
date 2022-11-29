@@ -15,11 +15,6 @@ rc('font', family='AppleGothic')
 plt.rcParams['axes.unicode_minus'] = False
 matplotlib.rcParams["font.family"] ="Malgun Gothic"
 matplotlib.rcParams["axes.unicode_minus"] =False
-
-rc('font', family='AppleGothic')
-plt.rcParams['axes.unicode_minus'] = False
-matplotlib.rcParams["font.family"] ="Malgun Gothic"
-matplotlib.rcParams["axes.unicode_minus"] =False
     
 def main():
     st.header('최대 7일 이내의 뉴스 키워드를 찾을 수 있습니다')
@@ -57,7 +52,7 @@ def main():
     data = dict(data)
  
    
-    wc = WordCloud(font_path=font,\
+    wc = WordCloud(
             background_color="white", \
             width=1000, \
             height=1000, \
