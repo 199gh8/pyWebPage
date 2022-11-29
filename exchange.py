@@ -111,16 +111,6 @@ if(clicked==True):
     
     
 # ----------------------------------주식파트------------------------------------------
-currency_name_symbols2 = {"1", "2", 
-                         "3", "4"}
-currency_name2 = st.sidebar.selectbox('종목 선택', currency_name_symbols2.keys())
-
-clicked2 = st.sidebar.button("종목 데이터 가져오기")
-
-if(clicked2==True):
-
-    currency_symbol2 = currency_name_symbols2[currency_name] # 환율 심볼 선택
-    currency_code2 = f"FX_{currency_symbol2}KRW"
 
 
 
