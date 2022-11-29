@@ -117,8 +117,10 @@ st.title('주요 주식,가상화폐 변동율')
 tickers ={
   'SK hynix':'000660.KS',
   'Samsung Electronics':'005930.KS',
+  'NVIDIA Corporation' :'NVDA',
+  'QUALCOMM':'QCOM'
   'BTC-USD':'BTC-USD'
-  'MSFT':'MSFT'
+
 }
 reversed_ticker = dict(map(reversed,tickers.items()))
 dropdown = st.multiselect('select',tickers.keys())
