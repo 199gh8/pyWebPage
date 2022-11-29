@@ -94,13 +94,13 @@ if(clicked==True):
     
    
     # 선 그래프 그리기 (df_exchange_rate2 이용)
-    ax = df_exchange_rate2[''].plot(grid=True, figsize=(15, 5))
-    ax.set_title("", fontsize=30) # 그래프 제목을 지정
-    ax.set_xlabel("", fontsize=20)                   # x축 라벨을 지정
-    ax.set_ylabel(f"}", fontsize=20)  # y축 라벨을 지정
+    ax = df_exchange_rate2['trading standard rate'].plot(grid=True, figsize=(15, 5))
+    ax.set_title("exchange(trading standard rate)", fontsize=30) # 그래프 제목을 지정
+    ax.set_xlabel("date", fontsize=20)                   # x축 라벨을 지정
+    ax.set_ylabel(f"won/{currency_name}", fontsize=20)  # y축 라벨을 지정
     plt.xticks(fontsize=15)             # X축 눈금값의 폰트 크기 지정
     plt.yticks(fontsize=15)             # Y축 눈금값의 폰트 크기 지정    
     fig = ax.get_figure()               # fig 객체 가져오기    
-    st.pyplot(fig)                      # 스트림릿 웹 앱에 그래프 그리기
+    st.pyplot(fig)                      # 스트림릿 웹 앱에 그래프 그리
     
     
