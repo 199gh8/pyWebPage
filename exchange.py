@@ -119,7 +119,6 @@ tickers ={
   'Samsung Electronics':'005930.KS',
   'NVIDIA Corporation' :'NVDA',
   'TESLA':'TSLA'
-  'APPLE':'AAPL'
   'MICROSOFT':'MSFT'
   'BITCOIN':'BTC-USD'
   'Ethereum':'ETH-USD'
