@@ -24,8 +24,8 @@ from matplotlib import ticker   #그래프 축 눈금 간격 설정
 # 코드명으로 종목 추가 해주어야함
 # -----------------------------------------------------------------------------
 
-
-st.subheader('주식,가상화폐 변동율') #sidebar표시
+#sidebar표시
+st.subheader('주식,가상화폐 변동율') 
 # 종믁은 시장 코드로 입력해주어야함.
 # 추가는 간단하게 '이름명':'코드'
 tickers ={
@@ -35,24 +35,25 @@ tickers ={
   'BTC-USD':'BTC-USD'
 }
 
-rt = dict(map(reversed,tickers.items()))
 #종목받아옴
-dd = st.multiselect('select',tickers.keys())
+rt = dict(map(reversed,tickers.items()))
 #종목 여러개선택
-start = st.date_input('Start', value=pd.to_datetime('2022-11-01'))
+dd = st.multiselect('select',tickers.keys())
 #시작기간설정
-end = st.date_input('End',value=pd.to_datetime('today'))
+start = st.date_input('Start', value=pd.to_datetime('2022-11-01'))
 #종료기간설정
+end = st.date_input('End',value=pd.to_datetime('today'))
 
 #데이터 프레임
 if len(dd) > 0:
   for i in dd:
-    df = yf.download(tickers[i],start,end)['Adj Close']
     #종목닫기
-    st.title(rt[tickers[i]])
+    df = yf.download(tickers[i],start,end)['Adj Close']
     #종목명
-    st.line_chart(df)
+    st.title(rt[tickers[i]])
     #종목차트
+    st.line_chart(df)
+    
 
 
  
@@ -63,9 +64,8 @@ if len(dd) > 0:
  
 # -----------------------------------------------------------------------------
 # 날짜별 환율 데이터를 반환하는 함수
-# - 입력 인수: currency_code(통화코드), last_page_num(페이지 수)
-# - 반환: 환율 데이터
 # -----------------------------------------------------------------------------
+
 def get_exchange_rate_data(currency_code, last_page_num):
     base_url = "https://finance.naver.com/marketindex/exchangeDailyQuote.nhn"
     df = pd.DataFrame()
