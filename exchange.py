@@ -31,10 +31,10 @@ st.subheader('주식,가상화폐 변동율')
 # 종믁은 시장 코드로 입력해주어야함.
 # 추가는 간단하게 '이름명':'코드'
 tickers ={
-  'Samsung Electronics':'005930.KS',
-  'SK hynix':'000660.KS',
-  'TESLA' :'TSLA',
-  'BTC-USD' :'BTC-USD'
+  'Samsung Electronics📱':'005930.KS',
+  'SK hynix 🖳':'000660.KS',
+  'TESLA 🚘' :'TSLA',
+  'BTC-USD ₿' :'BTC-USD'
 }
 
 #종목받아옴
