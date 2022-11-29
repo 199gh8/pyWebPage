@@ -28,7 +28,7 @@ tickers ={
   'BTC-USD':'BTC-USD'
 }
 
-A = dict(map(reversed,tickers.items()))
+reversed_ticker  = dict(map(reversed,tickers.items()))
 dropdown = st.multiselect('select',tickers.keys())
 start = st.date_input('Start', value=pd.to_datetime('2019-01-01'))
 end = st.date_input('End',value=pd.to_datetime('today'))
