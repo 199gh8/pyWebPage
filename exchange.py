@@ -29,14 +29,23 @@ tickers ={
 }
 
 rt = dict(map(reversed,tickers.items()))
+#종목받아옴
 dd = st.multiselect('select',tickers.keys())
-start = st.date_input('Start', value=pd.to_datetime('2019-01-01'))
+#종목 여러개선택
+start = st.date_input('Start', value=pd.to_datetime('2022-11-01'))
+#시작기간설정
 end = st.date_input('End',value=pd.to_datetime('today'))
+#종료기간설정
+
+#데이터 프레임
 if len(dd) > 0:
   for i in dd:
     df = yf.download(tickers[i],start,end)['Adj Close']
+    #종목닫기
     st.title(rt[tickers[i]])
+    #종목명
     st.line_chart(df)
+    #종목차트
 
 
  
