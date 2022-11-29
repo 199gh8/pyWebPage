@@ -41,10 +41,9 @@ def main():
     data = ko.vocab().most_common(150)
 
     data = dict(data)
- 
-    
+   
 
-    font = 'C:\WINDOWS\FONTS\GULIM.TTC' #이 친구는 코랩과는 다르다 ㅋㅋㅋㅋ
+    font = "C:\\WINDOWS\\FONTS\GULIM.TTC" #이 친구는 코랩과는 다르다 ㅋㅋㅋㅋ
     wc = WordCloud(font_path=font,\
             background_color="white", \
             width=1000, \
