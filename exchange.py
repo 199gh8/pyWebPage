@@ -115,7 +115,13 @@ currency_name_symbols2 = {"1", "2",
                          "3", "4"}
 currency_name2 = st.sidebar.selectbox('종목 선택', currency_name_symbols.keys())
 
-clicked3 = st.sidebar.button("환율 데이터 가져오기")
+clicked2 = st.sidebar.button("종목 데이터 가져오기")
+
+if(clicked2==True):
+
+    currency_symbol2 = currency_name_symbols2[currency_name] # 환율 심볼 선택
+    currency_code2 = f"FX_{currency_symbol2}KRW"
+
 
 
 st.title('주식,가상화폐 변동율')
